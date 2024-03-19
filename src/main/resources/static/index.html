@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Smaple</h1>
+<div id="list"></div>
+<button id="btn">조회하기</button>
+<script >
+   async function list(){
+       let response= await fetch("http://localhost:8080/posts/list")
+       let datas =await response.json();
+       let mapData= datas.map(data=>'<li>'+data.title+"</li>").join("");
+       document.getElementById("list").innerHTML='<ul>'+mapData+'</ul>';
+    }
+
+    document.getElementById("btn").addEventListener("click",list);
+
+
+</script>
+</body>
+</html>
