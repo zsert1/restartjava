@@ -2,6 +2,8 @@ package com.main.start.controller;
 
 
 import com.main.start.entity.Post;
+import com.main.start.service.PostService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -10,15 +12,16 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/posts")
+@RequiredArgsConstructor
 public class PostController {
+
+    private  final PostService postService;
+
+
 
     @GetMapping("/list")
     public List<Post> postList(){
-        return List.of(
-                new Post(UUID.randomUUID(),"title2","content2","ㄴ", LocalDateTime.now()),
-                new Post(UUID.randomUUID(),"title","content1"," ㄴ", LocalDateTime.now()),
-                new Post(UUID.randomUUID(),"title3","content3","ㄴ ", LocalDateTime.now())
-        );
+        return postService.postList();
     }
 
     @GetMapping("/{postId}")
