@@ -20,6 +20,7 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/mapper/h2/**/**.xml
   type-aliases-package: com.main.start.entity
+  type-handlers-package: com.main.start.mapper.typehandler
   configuration:
     map-underscore-to-camel-case: true
     default-statement-timeout: 30
