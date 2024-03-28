@@ -25,4 +25,8 @@ mybatis:
     map-underscore-to-camel-case: true
     default-statement-timeout: 30
     default-fetch-size: 100
+logging:
+  level:
+    root: INFO
+    com.main.start.mapper: TRACE
 
