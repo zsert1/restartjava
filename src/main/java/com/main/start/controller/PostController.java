@@ -20,8 +20,8 @@ public class PostController {
 
 
     @GetMapping("/list")
-    public List<Post> postList(@RequestParam String title){
-        return postService.postList(title);
+    public List<Post> postList(){
+        return postService.postList();
     }
 
     @GetMapping("/{postId}")
