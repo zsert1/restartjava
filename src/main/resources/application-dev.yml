@@ -1,9 +1,10 @@
+
 spring:
   datasource:
     url: jdbc:mariadb://localhost:3306/test?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
-    password:
+    password: ENC(eNFsQJXelOVa0umc+qSiL9y4ur4+mRPs)
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect
     properties:
@@ -12,3 +13,5 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: create-drop
+server:
+  port: 8081
